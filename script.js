@@ -1,4 +1,4 @@
-    const phrases = ["Simple", "No clutter", "Just works"];
+    const phrases = ["Simple", "Clutterless", "Agent Solutions","That work"];
     const el = document.getElementById("fade-text");
     const background = document.querySelector(".background-fade");
     const linksContainer = document.querySelector('.fade-links');
