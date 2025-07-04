@@ -62,22 +62,16 @@
 }
 
 @keyframes terminalFlicker {
-  0%, 100% {
-    opacity: 1;
-  }
-  10%, 30%, 60%, 80% {
-    opacity: 0.4;
-  }
-  20%, 40%, 70%, 90% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
+  0%, 100% { opacity: 1; }
+  5%, 15%, 35%, 55%, 75%, 95% { opacity: 0.2; }
+  10%, 30%, 50%, 70%, 90% { opacity: 1; }
 }
 
 
+
 .site-logo {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
   position: fixed;
   top: 25%;
   left: 0.5rem; /* nudges right */
@@ -87,10 +81,17 @@
   font-family: monospace;
   color: #3cb93c;
   z-index: 10;
-  animation: terminalFlicker 2.5s infinite;
+  /* animation: terminalFlicker 2.5s infinite; */
 }
 
+.site-logo.visible {
+  opacity: 1;
+  /* animation: terminalFlicker 2.5s infinite; */
+}
 
+.site-logo.random-flicker {
+  animation: terminalFlicker 2.5s infinite;
+}
 
 
 
