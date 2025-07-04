@@ -1,14 +1,64 @@
-window.addEventListener("load", () => {
-  const finalText = document.querySelector(".final-text");
-  const background = document.querySelector(".background-fade");
+    const phrases = ["Simple", "No clutter", "Just works"];
+    const el = document.getElementById("fade-text");
+    const background = document.querySelector(".background-fade");
+    const linksContainer = document.querySelector('.fade-links');
+    const links = document.querySelectorAll('.fade-link');
 
-  // Simulate text fade-in (you can tie this to actual animation)
-  setTimeout(() => {
-    finalText.style.opacity = 1;
+    let index = 0;
 
-    // After final text is visible, fade in background
-    setTimeout(() => {
-      background.style.opacity = 1;
-    }, 1000); // Delay background fade after text
-  }, 2000); // Initial delay for demonstration
-});
+ 
+
+
+
+    function fadeCycle() {
+      el.style.opacity = 1;
+
+      setTimeout(() => {
+        el.style.opacity = 0;
+      }, 2500);
+
+      setTimeout(() => {
+        index++;
+        if (index < phrases.length) {
+          el.textContent = phrases[index];
+          fadeCycle();
+        } else {
+          background.style.opacity = 1;
+
+          // 👇 Add this block to trigger the links fade-in
+          linksContainer.style.opacity = 1;
+          linksContainer.style.pointerEvents = 'auto';
+
+          links.forEach(link => {
+            link.style.opacity = 1;
+            link.style.transform = 'translateY(0)';
+          });
+        }
+      }, 5000);
+
+    
+    }
+
+window.onload = () => {
+  const fromPage = sessionStorage.getItem('fromPage');
+
+  if (fromPage) {
+    // Skip animations
+    el.style.opacity = 0;
+    background.style.opacity = 1;
+
+    // Immediately show links
+    linksContainer.style.opacity = 1;
+    linksContainer.style.pointerEvents = 'auto';
+    links.forEach(link => {
+      link.style.opacity = 1;
+      link.style.transform = 'translateY(0)';
+    });
+
+    // Clear the flag so next time it animates
+    sessionStorage.removeItem('fromPage');
+  } else {
+    // Normal animation flow
+    fadeCycle();
+  }
+};
