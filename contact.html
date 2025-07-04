@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Port 13ET LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 4rem;
+      font-family: sans-serif;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    form {
+      max-width: 500px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #000;
+      color: #fff;
+      border: none;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact</h1>
+  <p>Email us at <a href="mailto:info@port13et.com">info@port13et.com</a></p>
+    <form action="https://formspree.io/f/mwpbzgne" method="POST">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+
+    <!-- Optional spam trap (honeypot) -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- Redirect to a thank you page -->
+    <input type="hidden" name="_redirect" value="https://yourusername.github.io/project/thanks.html">
+
+    <button type="submit">Send</button>
+    </form>
+  <p><a href="index.html" onclick="sessionStorage.setItem('fromPage', 'true')">← Back to Home</a>
+</p>
+</body>
+</html>
