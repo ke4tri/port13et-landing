@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products — Port 13ET</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:#d5d3d3;border:1px solid #242424;border-radius:12px;padding:20px}
+    .card h2{margin:0 0 .5rem}
+    .tag{font-size:.8rem;opacity:.8}
+    .actions{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+    .actions a{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <header class="site-logo">
+    <a href="index.html" aria-label="Home"><code>_&gt; Port 13ET</code></a>
+  </header>
+
+  <main class="wrap" style="max-width:920px;margin:0 auto;padding:32px 20px">
+    <nav class="topbar" aria-label="Breadcrumb">
+      <a class="home-link" href="index.html">Home</a>
+    </nav>
+    <h1>Products</h1>
+    <div class="grid">
+
+      <!-- MatTimes card -->
+      <article class="card">
+        <h2>MatTimes (Only on App Store)</h2>
+        <p class="tag">Mobile app · BJJ gym map & open mat schedules</p>
+        <p>Find nearby BJJ gyms, view open mat times, and submit updates. Premium unlocks owner submissions and more.</p>
+        <div class="actions">
+          <a href="mattimes/mattimes-privacy.html">Privacy</a>
+          <a href="mattimes/mattimes-terms.html">Terms</a>
+        </div>
+      </article>
+
+      <!-- Add more product cards here as you spin them up -->
+      <!--
+      <article class="card">
+        <h2>Next Product</h2>
+        <p class="tag">Web app · Coming soon</p>
+        <p>Short description goes here.</p>
+        <div class="actions">
+          <a href="#">Landing</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </article>
+      -->
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2025 <code>_&gt; Port 13ET</code>
+  </footer>
+</body>
+</html>
