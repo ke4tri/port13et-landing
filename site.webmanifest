@@ -1,0 +1,11 @@
+{
+  "name": "Port 13ET",
+  "short_name": "Port13ET",
+  "icons": [
+    { "src": "images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "images/favicon-512.png",      "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0b0b0b",
+  "background_color": "#0b0b0b",
+  "display": "standalone"
+}
