@@ -13,10 +13,18 @@
 <!-- Web manifest -->
 <link rel="manifest" href="site.webmanifest"><!-- or images/site.webmanifest if you moved it -->
 <meta name="theme-color" content="#0b0b0b">
-
-
-
-    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    if (document.cookie.indexOf('splashSeen=1') !== -1) {
+      document.documentElement.classList.add('skip-splash');
+    }
+  })();
+</script>
+<style>
+  /* Hide the splash entirely if skipping */
+  .skip-splash #splash { display: none !important; }
+</style>
 </head>
 <footer class="site-footer">
   &copy; 2025 <code>_&gt; Port 13ET</code>
@@ -37,5 +45,34 @@
     <script src="script.js"></script>
 
 </body>
+<script>
+  // call this when your splash animation finishes
+  function markSplashSeen() {
+    // session cookie (no expires) → cleared when the browser fully closes
+    document.cookie = 'splashSeen=1; path=/; SameSite=Lax';
+  }
+
+  // example wiring if you want it automatic:
+  window.addEventListener('load', () => {
+    // adjust this selector to match your splash element
+    const splash = document.getElementById('splash');
+
+    // if we're skipping or there's no splash, bail
+    if (document.documentElement.classList.contains('skip-splash') || !splash) return;
+
+    const done = () => {
+      splash.classList.add('hidden'); // optional: hide class
+      markSplashSeen();
+    };
+
+    // prefer the real animation end, with a timeout fallback
+    splash.addEventListener('animationend', done, { once: true });
+    setTimeout(done, 2500); // fallback in case no animation event fires
+  });
+</script>
+<style>
+  /* optional: gives you a way to hide the splash once done */
+  #splash.hidden { display: none !important; }
+</style>
 
 </html>

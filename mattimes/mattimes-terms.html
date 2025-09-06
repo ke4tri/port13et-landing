@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Terms of Use for MatTimes by Port 13et LLC." />
   <link rel="canonical" href="https://port13et.com/mattimes/terms" />
+  <!-- Favicons (use absolute paths from the site root) -->
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0b">
   <style>
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;line-height:1.55;margin:0;background:#0b0b0b;color:#f2f2f2}
     .wrap{max-width:880px;margin:0 auto;padding:32px 20px}
@@ -20,12 +26,19 @@
 </head>
 <body>
   <main class="wrap">
+         <p style="margin:0 0 12px">
+    <!-- Pick ONE of these hrefs -->
+    <!-- Site home -->
+    <a href="/index.html" onclick="sessionStorage.setItem('fromPage','true')">Home</a>
+    <!-- Or, MatTimes home -->
+    <!-- <a href="/mattimes/" onclick="sessionStorage.setItem('fromPage','true')">← Home</a> -->
+  </p>
     <header>
       <h1>Terms of Use</h1>
       <p class="muted">Effective date: <strong>September 1, 2025</strong></p>
       <div class="card">
         <p>These Terms govern your use of <strong>MatTimes</strong> provided by <strong>Port 13et LLC</strong> (“we”, “us”). By using MatTimes, you agree to these Terms.</p>
-        <p>Contact: <a href="mailto:legal@port13et.com">legal@port13et.com</a> • Port 13et LLC, <em>[Mailing Address]</em></p>
+        <p>Contact: <a href="mailto:info@port13et.com">info@port13et.com</a> • Port 13et LLC, <em>[Mailing Address]</em></p>
       </div>
     </header>
 
@@ -63,7 +76,7 @@
     <p>These Terms are governed by the laws of <strong>Tennessee, USA</strong>, without regard to conflicts of law. Venue lies in the courts of <strong>[Your County], Tennessee</strong>.</p>
 
     <h2>12) Contact</h2>
-    <p><a href="mailto:info@port13et.com">legal@port13et.com</a> • Port 13et LLC, <em>[Mailing Address]</em></p>
+    <p><a href="mailto:info@port13et.com">info@port13et.com</a> • Port 13et LLC, <em>[Mailing Address]</em></p>
 
     <footer class="muted" style="margin-top:2rem">
       © <span id="y"></span> Port 13et LLC

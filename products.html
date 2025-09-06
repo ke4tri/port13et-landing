@@ -3,9 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <title>Products — Port 13ET</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- iPhone-friendly viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Page styles -->
   <style>
+    /* iPhone scroll fixes (safe, minimal) */
+    html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: auto;
+      min-height: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    html { height: -webkit-fill-available; }
+    body {
+      min-height: 100dvh;                 /* modern browsers */
+      min-height: -webkit-fill-available; /* iOS Safari */
+      -webkit-overflow-scrolling: touch;  /* momentum scroll for any overflow containers */
+    }
+    /* If any wrapper was 100vh in styles.css, force it to be flexible */
+    .product-page, .wrap, .page, .content, .container {
+      height: auto !important;
+      min-height: 100%;
+    }
+    /* Only lock scroll when you explicitly add .no-scroll to body (e.g., for modals) */
+    body.no-scroll { overflow: hidden !important; position: fixed; width: 100%; }
+
+    /* Existing page styling */
     .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .card{background:#d5d3d3;border:1px solid #242424;border-radius:12px;padding:20px}
     .card h2{margin:0 0 .5rem}
@@ -13,16 +39,24 @@
     .actions{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
     .actions a{text-decoration:underline}
   </style>
+
+  <!-- Favicons (absolute paths from site root) -->
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0b0b0b">
 </head>
 <body>
   <header class="site-logo">
-    <a href="index.html" aria-label="Home"><code>_&gt; Port 13ET</code></a>
+    <a href="/" aria-label="Home"><code>_&gt; Port 13ET</code></a>
   </header>
 
   <main class="wrap" style="max-width:920px;margin:0 auto;padding:32px 20px">
     <nav class="topbar" aria-label="Breadcrumb">
-      <a class="home-link" href="index.html">Home</a>
+      <p><a href="/" onclick="sessionStorage.setItem('fromPage', 'true')">Home</a></p>
     </nav>
+
     <h1>Products</h1>
     <div class="grid">
 
